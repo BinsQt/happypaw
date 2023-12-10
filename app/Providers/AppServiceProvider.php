@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->composer('main.partials.bpm', function ($view) {
+            $view->with('petbpm', DB::select('select bpm from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
+
+        });
+
+        view()->composer('main.partials.temperature', function ($view) {
+            $view->with('pettemperature', DB::select('select temp from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
+
+        });
+
+        view()->composer('main.partials.movement', function ($view) {
+            $view->with('petmovement', DB::select('select movement from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
+
+        });
     }
 }

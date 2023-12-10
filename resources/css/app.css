@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ekg-above {
+    fill: none;
+    stroke: rgb(57, 26, 23);
+    background-color: rgb(57, 26, 23);
+    color: aliceblue;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    opacity: 0;
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000;
+    animation: ekg 1s linear forwards infinite;
+}
+
+.ekg-below {
+    fill: none;
+    background-color: #ef0000;
+    stroke: rgb(0, 49, 244);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    opacity: 0;
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000;
+    animation: 5s pulse forwards infinite;
+}
+
+.ekg {
+    fill: none;
+    stroke: #ef0000;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    opacity: 0;
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000;
+    animation: ekg 3s linear forwards infinite;
+}
+
+@keyframes ekg {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      stroke-dashoffset: 2000;
+    }
+    99% {
+      opacity: 0;
+      stroke-dashoffset: 3000;
+    }
+    100% {
+      stroke-dashoffset: 1000;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    .l-screen{
+        visibility: collapse;
+    }
+}

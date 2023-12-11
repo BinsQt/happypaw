@@ -33,5 +33,5 @@
         </div>
 
     </div>
-    <button>Set the color property of all p elements</button>
+    {{-- <button>Set the color property of all p elements</button> --}}
 </section>

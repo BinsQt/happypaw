@@ -1,8 +1,8 @@
-<div x-data="{ open: false }" class="w-full border bg-gray-300 relative">
-    <button @click="open = ! open" class="w-full font-serif">PETS</button>
+<div x-data="{ open: false }" class="border px-5 py-1 w-full bg-gray-300">
+    <button @click="open = ! open" class="border w-full font-serif">Pets</button>
     <div x-show="open" @click.outside="open = false"
-    class="absolute">
-        content..
+    class="">
+        @include('main.partials.pets')
     </div>
 
 </div>

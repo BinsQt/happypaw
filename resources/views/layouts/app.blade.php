@@ -15,7 +15,8 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sansserif antialiased">
+    <body class="font-sansserif antialiased" x-cloak x-data="{openModal: false}"
+    :class="openModal ? 'overflow-hidden' : 'overflow-visible'">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Response;
 
 class petController extends Controller
 {
@@ -20,6 +22,44 @@ class petController extends Controller
         DB::table('pet_status')->insert($data);
     }
 
+    public function temp() {
+        $temps = DB::select('select temp from pet_status where sid=(SELECT max(sid) FROM pet_status)');
+        return view('status', ['tmp' => $temps]);
+    }
+
+    public function add(Request $request) {
+
+        $sid = 1;
+        $uid = auth()->id();
+        $petname = $request->input('petname');
+        $gender = $request->input('gender');
+        $breed = $request->input('breed');
+        $color = $request->input('color');
+        $birthday = $request->input('birthday');
+        $age = Carbon::now()->diffInMonths($birthday);
+
+        $petdata=array('sid'=>$sid,'uid'=>$uid,'name'=>$petname,"gender"=>$gender,"breed"=>$breed,"color"=>$color,"birthday"=>$birthday,"age"=>$age);
+        DB::table('pet')->insert($petdata);
+
+        return redirect('dashboard')->with('message', 'Your Pet is added');
+    }
+
+    public function getDetails($id)
+{
+
+    $details = DB::table('pet')->where('pid', $id)->first();
+    return response()->json($details);
+    dd('$details');
+  
+}
+
+
+
+    public function getSliderValue()
+{
+    $sliderValue = DB::select('select temp from pet_status Where sid=(SELECT max(sid) FROM pet_status)');
+    return response()->json($sliderValue);
+}
 
 
 }

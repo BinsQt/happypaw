@@ -1,3 +1,6 @@
+import jQuery from 'jquery';
+window.$ = jQuery;
+
 import './bootstrap';
 
 import Alpine from 'alpinejs';
@@ -6,8 +9,7 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-import jQuery from 'jquery';
-window.$ = jQuery;
+
 
 $(document).ready(function(){
     $("button").click(function(){
@@ -20,3 +22,18 @@ $(document).ready(function(){
       $("#bpm").addClass("ekg-above");
     });
   });
+
+  $.get('/getSliderValue', function(data) {
+    console.log(data);
+    $('#myRange').val(data);
+});
+
+
+
+
+
+
+
+
+
+

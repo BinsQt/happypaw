@@ -3,6 +3,11 @@
         <x-pet-names />
     </x-slot>
 
+    <div class="px-5">
+        @include('main.partials.petDetails')
+    </div>
+        
+
 
     <x-slot name="bottom_nav">
         @include('layouts.bottom-nav')

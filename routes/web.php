@@ -35,6 +35,14 @@ Route::get('/user', function () {
     return view('main.user');
 })->middleware(['auth', 'verified'])->name('user');
 
+Route::get('/petreg', function () {
+    return view('main.partials.petreg');
+})->name('petreg');
+
+Route::get('/getDetails/{pid}', function () {
+    return view('main.partials.details.details');
+})->name('details');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -44,7 +52,12 @@ Route::middleware('auth')->group(function () {
 Route::controller(PetController::class)->group(function() {
     // petstatus
     Route::get('/data', 'dbdata'); //send status of the pet data to database
+    Route::get('/getSliderValue', 'getSliderValue');
+    Route::post('/addpet', 'add'); //send pet data to database
+    Route::get('/getDetails/{pid}', 'getDetails');
     });
+    
+
 
 
 require __DIR__.'/auth.php';

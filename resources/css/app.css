@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+[x-cloak] {
+  display: none !important;
+}
+
 .ekg-above {
     fill: none;
     stroke: rgb(57, 26, 23);

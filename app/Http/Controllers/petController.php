@@ -16,16 +16,13 @@ class petController extends Controller
         $_bpm = $_GET['bpm'];
         $_temp = $_GET['temp'];
         $_movement = $_GET['movement'];
+        $_ifActive = $_GET['finger'];
 
         // insert sensor value to database
-        $data=array('pid'=>$_pid, 'bpm'=>$_bpm,"temp"=>$_temp,"movement"=>$_movement);
+        $data=array('pid'=>$_pid, 'bpm'=>$_bpm,"temp"=>$_temp,"movement"=>$_movement,"ifActive"=>$_ifActive);
         DB::table('pet_status')->insert($data);
     }
 
-    public function temp() {
-        $temps = DB::select('select temp from pet_status where sid=(SELECT max(sid) FROM pet_status)');
-        return view('status', ['tmp' => $temps]);
-    }
 
     public function add(Request $request) {
 

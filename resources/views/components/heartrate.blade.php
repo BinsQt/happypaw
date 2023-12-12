@@ -23,7 +23,7 @@
                     @include('main.partials.bpm')
                </div>
                <div>
-                <span class="text-sm">Avg.BPM</span>
+                <span class="text-sm">BPM</span>
               </div>
             </div>
         </div>

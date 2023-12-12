@@ -29,7 +29,7 @@
 
                 var auto_refresh = setInterval(
                 function () {
-                    $('#load_content2').load('/normal').fadeIn("fast");
+                    $('#load_content4').load('/normals').fadeIn("fast");
                 }, 5000);
 
                 var auto_refresh = setInterval(

@@ -26,6 +26,16 @@ class AppServiceProvider extends ServiceProvider
 
         });
 
+        view()->composer('main.partials.normals', function ($view) {
+            $view->with('petnormal', DB::select('select bpm from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
+
+        });
+
+        view()->composer('main.partials.bpm', function ($view) {
+            $view->with('petActive', DB::select('select ifActive from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
+
+        });
+
         view()->composer('main.status', function ($view) {
             $view->with('petbpm', DB::select('select bpm from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
 

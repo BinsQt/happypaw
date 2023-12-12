@@ -13,7 +13,7 @@
                     <x-movement />
                 </div>
                 <div class="h-1/2 bg-blue-200 rounded-3xl p-5">
-                    @include('main.partials.normal')
+                    @include('main.partials.normals')
                 </div>
 
             </div>

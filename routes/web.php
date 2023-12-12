@@ -51,14 +51,13 @@ Route::get('/move', function () {
     return view('main.partials.movement');
 })->name('move');
 
+Route::get('/normals', function () {
+    return view('main.partials.normals');
+})->name('normals');
+
 Route::get('/temp', function () {
     return view('main.partials.temperature');
 })->name('temp');
-
-Route::get('/normal', function () {
-    return view('main.partials.normal');
-})->name('normal');
-
 
 
 

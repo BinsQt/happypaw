@@ -17,6 +17,7 @@ return new class extends Migration
             $table->smallInteger('bpm');
             $table->smallInteger('temp');
             $table->smallInteger('movement');
+            $table->smallInteger('ifActive');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('petStatus');
+        Schema::dropIfExists('pet_status');
     }
 };

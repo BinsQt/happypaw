@@ -26,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
 
         });
 
+        view()->composer('main.status', function ($view) {
+            $view->with('petbpm', DB::select('select bpm from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
+
+        });
+
         view()->composer('main.partials.temperature', function ($view) {
             $view->with('pettemperature', DB::select('select temp from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
 
@@ -33,6 +38,11 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('main.partials.tmp', function ($view) {
             $view->with('pettemperature', DB::select('select temp from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
+
+        });
+
+        view()->composer('components.temp', function ($view) {
+            $view->with('slider', DB::select('select temp from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
 
         });
 

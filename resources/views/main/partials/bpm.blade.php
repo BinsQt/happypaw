@@ -1,16 +1,12 @@
     <div class="z-10 h-20 w-32 flex justify-evenly items-center">
-        <div>
+        <div id="load_content" >
             @foreach ( $petbpm as $petheartrate )
-            <p class="text-5xl">
+            <p class="text-7xl">
                 {{ $petheartrate -> bpm }}
             </p>
              @endforeach
         </div>
 
-        <div>
-          <span class="text-sm">BPM</span>  
-        </div>
-        
-        
+
    </div>
 

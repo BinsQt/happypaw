@@ -47,19 +47,12 @@ class petController extends Controller
     public function getDetails($id)
 {
 
-    $details = DB::table('pet')->where('pid', $id)->first();
-    return response()->json($details);
-    dd('$details');
-  
+    $details = DB::select('select * from pet');
+    return view('main.details', ['detail' => $details]);
+
 }
 
 
-
-    public function getSliderValue()
-{
-    $sliderValue = DB::select('select temp from pet_status Where sid=(SELECT max(sid) FROM pet_status)');
-    return response()->json($sliderValue);
-}
 
 
 }

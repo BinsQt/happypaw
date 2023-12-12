@@ -1,9 +1,9 @@
 <section>
     <div class="flex flex-col justify-evenly items-center gap-5 z-20">
         <div class="font-sansserif font-light" >
-            <h1 id="bpm">Heart Rate</h1>
+            <h1>Heart Rate</h1>
         </div>
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col items-center justify-between">
             <div class="animate-pulse">
                 <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
                     <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com
@@ -18,9 +18,14 @@
                         79-47.5 124.6-39.9C461.5 55.6 512 115.2 512 185.1v5.8c0 16.9-2.8 33.5-8.3 49.1z"/></svg>
             </div>
 
-            <div class="z-10">
-                @include('main.partials.bpm')
-           </div>
+            <div class="flex items-center justify-evenly">
+                <div  id="bpm" class="z-10">
+                    @include('main.partials.bpm')
+               </div>
+               <div>
+                <span class="text-sm">Avg.BPM</span>
+              </div>
+            </div>
         </div>
         <hr id="line" class=" bg-green-600 h-1 rounded-full w-full animate-pulse delay-1000">
         <div>

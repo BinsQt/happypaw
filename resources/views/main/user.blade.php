@@ -1,10 +1,14 @@
 <x-app-layout>
-    <div class="flex flex-col m-3">
+    <div class="flex flex-col my-5 mx-3">
 
         <div class="bg-blue-500 z-10 rounded-3xl w-full h-60 flex items-center justify-evenly p-10">
             <div class="flex flex-col gap-5">
-                {{-- <x-user-icon /> --}}
-                <button class="bg-gray-300 rounded-full">Edit Profile</button>
+                <div class="w-20 h-auto">
+                    <x-user-icon />
+                </div>
+               <div>
+                    <button class="bg-gray-300 rounded-full">Edit Profile</button>
+               </div>
             </div>
             <div class="p-3 flex flex-col gap-6">
                 <p class="text-xl">{{Auth::user()->name}}</p>
@@ -40,15 +44,9 @@
                 </div>
                 <hr class="w-full h-px my-1 bg-blue-950 border-0 dark:bg-gray">
             </div>
-            {{-- <div class="flex flex-col gap-3">
-                <p>Facebook</p>
-                <input type="text">
-                <hr class="w-full h-px my-1 bg-blue-950 border-0 dark:bg-gray">
-            </div> --}}
-
 
         </div>
     </div>
 
-    
+
 </x-app-layout>

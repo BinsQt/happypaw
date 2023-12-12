@@ -7,8 +7,9 @@
        <div>
         <div>Body Temperature</div>
             <div class="w-full bg-gray-400 rounded-full h-10 flex items-center">
-
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange" disabled>
+                @foreach ($slider as $value)
+                <input type="range" min="1" max="100" value="{{$value -> temp}}" class="slider" id="myRange" disabled>
+                @endforeach
 
             </div>
        </div>

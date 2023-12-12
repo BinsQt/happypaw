@@ -39,9 +39,29 @@ Route::get('/petreg', function () {
     return view('main.partials.petreg');
 })->name('petreg');
 
-Route::get('/getDetails/{pid}', function () {
-    return view('main.partials.details.details');
+Route::get('/pet/{pid}', function () {
+    return view('main.details');
 })->name('details');
+
+Route::get('/likes', function () {
+    return view('main.partials.bpm');
+})->name('hr');
+
+Route::get('/move', function () {
+    return view('main.partials.movement');
+})->name('move');
+
+Route::get('/temp', function () {
+    return view('main.partials.temperature');
+})->name('temp');
+
+Route::get('/normal', function () {
+    return view('main.partials.normal');
+})->name('normal');
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -54,10 +74,8 @@ Route::controller(PetController::class)->group(function() {
     Route::get('/data', 'dbdata'); //send status of the pet data to database
     Route::get('/getSliderValue', 'getSliderValue');
     Route::post('/addpet', 'add'); //send pet data to database
-    Route::get('/getDetails/{pid}', 'getDetails');
+    Route::get('/pet/{pid}', 'getDetails');
     });
-    
-
 
 
 require __DIR__.'/auth.php';

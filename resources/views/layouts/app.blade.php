@@ -13,7 +13,32 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;500;900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js" type="text/javascript"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <script type="text/javascript">
+            var auto_refresh = setInterval(
+                function () {
+                    $('#load_content').load('/likes').fadeIn("fast");
+                }, 5000);
+
+                var auto_refresh = setInterval(
+                function () {
+                    $('#load_content1').load('/temp').fadeIn("fast");
+                }, 5000);
+
+                var auto_refresh = setInterval(
+                function () {
+                    $('#load_content2').load('/normal').fadeIn("fast");
+                }, 5000);
+
+                var auto_refresh = setInterval(
+                function () {
+                    $('#load_content3').load('/move').fadeIn("fast");
+                }, 5000);
+            </script>
+
+
     </head>
     <body class="font-sansserif antialiased" x-cloak x-data="{openModal: false}"
     :class="openModal ? 'overflow-hidden' : 'overflow-visible'">

@@ -40,7 +40,7 @@
                     <x-application-logo class="fill-current" />
                 </a>
                 <div class="w-full text-center mt-10">
-                    <p><span class="text-gray-600 font-mono">"Quotes"</span></p>
+                    <p><span class="text-gray-600 font-mono italic font-thin">"A dog is the only thing on earth that loves you more than he loves himself"</span></p>
                 </div>
             </div>
         </div>

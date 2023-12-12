@@ -11,22 +11,28 @@ Alpine.start();
 
 
 
-$(document).ready(function(){
-    $("button").click(function(){
-      $("#ekg").addClass("ekg-above");
-    });
-  });
+// $(document).ready(function(){
+//     $("button").click(function(){
+//       $("#ekg").addClass("ekg-above");
+//     });
+//   });
 
-  $(document).ready(function(){
-    $("button").click(function(){
-      $("#bpm").addClass("ekg-above");
-    });
-  });
+//   $(document).ready(function(){
+//     $("button").click(function(){
+//       $("#bpm").addClass("ekg-above");
+//     });
+//   });
 
-  $.get('/getSliderValue', function(data) {
-    console.log(data);
-    $('#myRange').val(data);
-});
+
+
+$('#addPet').click(function(){
+    window.location.href='petreg';
+
+ })
+
+ 
+
+
 
 
 

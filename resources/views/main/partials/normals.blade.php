@@ -2,11 +2,11 @@
     @foreach ( $petnormal as $petheartrate )
         <p class="text-sm">
         @if ($petheartrate -> bpm <= 60)
-            Your dogs heart rate is below normal. Please Check your dog condition
+            Your dogs heart rate is <span class="text-blue-600 font-bold capitalize text-xl"> below normal.</span> Please Check your dog condition
         @elseif ($petheartrate -> bpm >= 140)
-            Your dogs heart rate is above normal. Please Check your dog condition
+            Your dogs heart rate is <span class="text-red-600 font-bold capitalize text-xl"> above normal.</span> Please Check your dog condition
         @else
-        Your dogs heart rate is normal.
+        Your dogs heart rate is <span class="text-green-600 font-bold capitalize text-xl">normal.</span>
         @endif
         </p>
      @endforeach

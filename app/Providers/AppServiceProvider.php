@@ -51,7 +51,7 @@ class AppServiceProvider extends ServiceProvider
 
         });
 
-        view()->composer('components.temp', function ($view) {
+        view()->composer('components.slide', function ($view) {
             $view->with('slider', DB::select('select temp from pet_status Where sid=(SELECT max(sid) FROM pet_status)'));
 
         });

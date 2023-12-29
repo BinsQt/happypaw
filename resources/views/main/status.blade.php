@@ -9,10 +9,10 @@
                 <x-heartrate />
             </div>
             <div class="flex flex-col gap-5">
-                <div class="h-1/2 bg-blue-200 rounded-3xl p-5">
+                <div class="auto bg-blue-200 rounded-3xl p-5">
                     <x-movement />
                 </div>
-                <div class="h-1/2 bg-blue-200 rounded-3xl p-5">
+                <div class="h-auto bg-blue-200 rounded-3xl p-5">
                     @include('main.partials.normals')
                 </div>
 

@@ -36,6 +36,11 @@
                 function () {
                     $('#load_content3').load('/move').fadeIn("fast");
                 }, 5000);
+
+                var auto_refresh = setInterval(
+                function () {
+                    $('#slider').load('/slide').fadeIn("fast");
+                }, 5000);
             </script>
 
 

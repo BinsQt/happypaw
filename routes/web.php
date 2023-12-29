@@ -59,6 +59,10 @@ Route::get('/temp', function () {
     return view('main.partials.temperature');
 })->name('temp');
 
+Route::get('/slide', function () {
+    return view('main.partials.slider');
+})->name('temp');
+
 
 
 

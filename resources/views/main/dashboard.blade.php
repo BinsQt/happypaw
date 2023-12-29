@@ -6,7 +6,7 @@
     <div class="px-5">
         @include('main.partials.petDetails')
     </div>
-        
+
 
 
     <x-slot name="bottom_nav">
